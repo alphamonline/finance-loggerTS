@@ -1,9 +1,17 @@
-const character = 'alpha';
+//Dom and Type Casting
+const form = document.querySelector('.new-item-form') as HTMLFormElement;
+const type = document.querySelector('#type') as HTMLSelectElement;
+const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
 
-console.log(character);
+form.addEventListener('submit', (e: Event) => {
+  e.preventDefault();
 
-const inputs = document.querySelectorAll('input');
-
-inputs.forEach(input => {
-  console.log(input);
-});
+  console.log(
+    type.value,
+    tofrom.value,
+    details.value,
+    amount.valueAsNumber
+  )
+})
